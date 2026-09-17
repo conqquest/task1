@@ -18,6 +18,10 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'JoinEazy API is running' });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/groups', groupRoutes);
 app.use('/api/assignments', assignmentRoutes);
